@@ -1,211 +1,168 @@
 import React from 'react';
-import { BookOpen, Code, Calculator, Globe, Database, Users, Calendar, Clock } from 'lucide-react';
+import { BookOpen, Code, Calculator, Globe, Database, Users, Calendar, Clock, Phone } from 'lucide-react';
 
-interface Course {
+interface Task {
   id: string;
-  title: string;
+  matkul: string;
+  tugas: string;
+  deadline: string;
+  namaDosen: string;
+  nomorWA: string;
   icon: React.ReactNode;
-  taskCount: number;
-  urgentTasks: number;
-  nextDeadline: string;
 }
 
 const Dashboard: React.FC = () => {
-  const courses: Course[] = [
+  const tasks: Task[] = [
     {
-      id: 'oop',
-      title: 'Pemrograman Berbasis Objek',
-      icon: <Code className="w-6 h-6 text-white" />,
-      taskCount: 3,
-      urgentTasks: 1,
-      nextDeadline: '2 hari lagi'
+      id: '1',
+      matkul: 'Object Oriented Programming',
+      tugas: 'Teory 03 - Encapsulation',
+      deadline: 'Monday',
+      namaDosen: 'Mr. Ridwan Rismanto',
+      nomorWA: '6285646313719',
+      icon: <Code className="w-5 h-5 text-red-500" />
     },
     {
-      id: 'numeric',
-      title: 'Metode Numerik',
-      icon: <Calculator className="w-6 h-6 text-white" />,
-      taskCount: 2,
-      urgentTasks: 0,
-      nextDeadline: '5 hari lagi'
+      id: '2',
+      matkul: 'Numerical Methods',
+      tugas: 'Gauss and Gauss-Jordan',
+      deadline: 'Wednesday',
+      namaDosen: 'Mrs. Adevian Fairuz Pratama',
+      nomorWA: '6281333156702',
+      icon: <Calculator className="w-5 h-5 text-red-500" />
     },
     {
-      id: 'database',
-      title: 'Basis Data Lanjut',
-      icon: <Database className="w-6 h-6 text-white" />,
-      taskCount: 4,
-      urgentTasks: 2,
-      nextDeadline: '1 hari lagi'
+      id: '3',
+      matkul: 'Database Advanced',
+      tugas: 'Jobsheet 03 - Advanced SQL',
+      deadline: 'Tuesday',
+      namaDosen: 'Mr. Yoppy Yunhasnawa',
+      nomorWA: '6285755023455',
+      icon: <Database className="w-5 h-5 text-red-500" />
     },
     {
-      id: 'webdesign',
-      title: 'Desain dan Pemrograman Web',
-      icon: <Globe className="w-6 h-6 text-white" />,
-      taskCount: 3,
-      urgentTasks: 1,
-      nextDeadline: '3 hari lagi'
+      id: '5',
+      matkul: 'Web Programming and Design',
+      tugas: 'Jobsheet 03 - Javascript',
+      deadline: 'Wednesday',
+      namaDosen: 'Mr. Farid Angga Pribadi',
+      nomorWA: '6281357046700',
+      icon: <Globe className="w-5 h-5 text-red-500" />
     },
     {
-      id: 'citizenship',
-      title: 'Kewarganegaraan',
-      icon: <Users className="w-6 h-6 text-white" />,
-      taskCount: 1,
-      urgentTasks: 0,
-      nextDeadline: '1 minggu lagi'
+      id: '6',
+      matkul: 'Citizenship',
+      tugas: 'Presentation',
+      deadline: 'Friday',
+      namaDosen: 'Mrs. Widaningsih Condrowardhani',
+      nomorWA: '6281803805595',
+      icon: <Users className="w-5 h-5 text-red-500" />
     },
     {
-      id: 'mis',
-      title: 'Sistem Informasi Manajemen',
-      icon: <BookOpen className="w-6 h-6 text-white" />,
-      taskCount: 2,
-      urgentTasks: 1,
-      nextDeadline: '4 hari lagi'
+      id: '7',
+      matkul: 'Management Information System',
+      tugas: 'Presentation',
+      deadline: 'Thursday',
+      namaDosen: 'Mr. Indra Dharma Wijaya',
+      nomorWA: '6281805098868',
+      icon: <BookOpen className="w-5 h-5 text-red-500" />
     },
     {
-      id: 'projman',
-      title: 'Manajemen Proyek',
-      icon: <Calendar className="w-6 h-6 text-white" />,
-      taskCount: 3,
-      urgentTasks: 0,
-      nextDeadline: '6 hari lagi'
+      id: '8',
+      matkul: 'Project Management',
+      tugas: '-',
+      deadline: '-',
+      namaDosen: 'Mr. Pramana Yoga Saputra',
+      nomorWA: '6281330966644',
+      icon: <Calendar className="w-5 h-5 text-red-500" />
     },
     {
-      id: 'english',
-      title: 'Bahasa Inggris 2',
-      icon: <Globe className="w-6 h-6 text-white" />,
-      taskCount: 2,
-      urgentTasks: 1,
-      nextDeadline: '2 hari lagi'
+      id: '9',
+      matkul: 'English 2',
+      tugas: 'Unit 2 Assignment',
+      deadline: 'Tomorrow',
+      namaDosen: 'Mrs. Farida Ulfa',
+      nomorWA: '6285334000317',
+      icon: <Globe className="w-5 h-5 text-red-500" />
     },
-    {
-      id: 'practicum',
-      title: 'Praktikum Pemrograman Berbasis Objek',
-      icon: <Code className="w-6 h-6 text-white" />,
-      taskCount: 2,
-      urgentTasks: 1,
-      nextDeadline: '3 hari lagi'
-    }
   ];
 
-  const handleCourseClick = (courseId: string) => {
-    console.log(`Clicked course: ${courseId}`);
-    // Nanti akan navigate ke detail page
+  const handleDosenClick = (nomorWA: string, namaDosen: string) => {
+    const message = `Halo ${namaDosen}, saya ingin bertanya mengenai tugas mata kuliah.`;
+    const waUrl = `https://wa.me/${nomorWA}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, '_blank');
+  };
+
+  const getUrgencyColor = (deadline: string) => {
+    if (deadline.includes('1 hari')) return 'text-red-600 font-bold';
+    if (deadline.includes('2 hari') || deadline.includes('3 hari')) return 'text-red-500';
+    return 'text-gray-600';
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100 p-4 md:p-6">
-      {/* Header */}
-      <div className="bg-white rounded-2xl shadow-lg p-6 mb-8 border border-purple-100">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center">
-            <BookOpen className="w-6 h-6 text-white" />
-          </div>
-          <div>
-            <h1 className="text-3xl font-bold text-gray-800">Dashboard Tugas</h1>
-            <p className="text-gray-600">Kelola jadwal dan deadline tugas kuliahmu</p>
-          </div>
+    <div className="min-h-screen bg-white p-4 md:p-6">
+      {/* Motivational Section */}
+      <div className="text-center mb-8">
+        <h2 className="text-4xl font-bold text-red-500 mb-2">Semangat ya Rek!</h2>
+        <p className="text-lg text-black">Keep Spirit Guys!</p>
+        <h3 className="text-2xl font-semibold text-black">Catatan: Klik Nama Dosen untuk menghubungi Dosen</h3>
+        <p className="text-lg text-black">Note: Click on the lecturer's name to contact them</p>
+      </div>
+
+      {/* Tasks List */}
+      <div className="bg-white rounded-xl shadow-lg border-2 border-red-500 overflow-hidden">
+        <div className="bg-red-500 px-6 py-4">
+          <h3 className="text-xl font-bold text-white">Daftar Tugas</h3>
         </div>
         
-        {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-          <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl p-4 text-white">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-5 h-5" />
-              <span className="font-medium">Total Mata Kuliah</span>
-            </div>
-            <div className="text-2xl font-bold mt-1">{courses.length}</div>
-          </div>
-          <div className="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-xl p-4 text-white">
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5" />
-              <span className="font-medium">Total Tugas</span>
-            </div>
-            <div className="text-2xl font-bold mt-1">{courses.reduce((sum, course) => sum + course.taskCount, 0)}</div>
-          </div>
-          <div className="bg-gradient-to-r from-red-500 to-pink-600 rounded-xl p-4 text-white">
-            <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5" />
-              <span className="font-medium">Tugas Mendesak</span>
-            </div>
-            <div className="text-2xl font-bold mt-1">{courses.reduce((sum, course) => sum + course.urgentTasks, 0)}</div>
-          </div>
-        </div>
-      </div>
-
-      {/* Course Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {courses.map((course) => (
-          <div
-            key={course.id}
-            onClick={() => handleCourseClick(course.id)}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-purple-100 hover:border-purple-300 hover:-translate-y-1 group"
-          >
-            {/* Card Header */}
-            <div className="p-6 border-b border-gray-100">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  {course.icon}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg font-semibold text-gray-800 leading-tight mb-2 group-hover:text-purple-600 transition-colors">
-                    {course.title}
-                  </h3>
-                  <div className="flex items-center gap-2 text-sm text-gray-500">
-                    <Clock className="w-4 h-4" />
-                    <span>Deadline terdekat: {course.nextDeadline}</span>
+        <div className="divide-y divide-gray-200">
+          {tasks.map((task, index) => (
+            <div key={task.id} className={`p-6 hover:bg-red-50 transition-colors ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
+              <div className="flex items-center justify-between">
+                <div className="flex items-start gap-4 flex-1">
+                  <div className="flex-shrink-0">
+                    {task.icon}
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Card Body */}
-            <div className="p-6">
-              <div className="flex justify-between items-center">
-                <div className="flex gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-gray-800">{course.taskCount}</div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wide">Total Tugas</div>
-                  </div>
-                  <div className="text-center">
-                    <div className={`text-2xl font-bold ${course.urgentTasks > 0 ? 'text-red-500' : 'text-green-500'}`}>
-                      {course.urgentTasks}
+                  
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-4">
+                      <div className="flex-1">
+                        <h4 className="text-lg font-semibold text-red-600 mb-1">{task.matkul}</h4>
+                        <p className="text-gray-700 mb-2">{task.tugas}</p>
+                        <div className="flex items-center gap-4 text-sm">
+                          <div className="flex items-center gap-1">
+                            <Clock className="w-4 h-4 text-red-500" />
+                            <span className={getUrgencyColor(task.deadline)}>
+                              {task.deadline}
+                            </span>
+                          </div>
+                          <button
+                            onClick={() => handleDosenClick(task.nomorWA, task.namaDosen)}
+                            className="flex items-center gap-1 text-red-500 hover:text-red-700 hover:underline transition-colors"
+                          >
+                            <Phone className="w-4 h-4" />
+                            <span className="font-medium">{task.namaDosen}</span>
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <div className="flex-shrink-0">
+                        <div className={`px-3 py-1 rounded-full text-sm font-medium ${
+                          task.deadline.includes('1 hari') 
+                            ? 'bg-red-100 text-red-800 border border-red-300' 
+                            : task.deadline.includes('2 hari') || task.deadline.includes('3 hari')
+                            ? 'bg-red-50 text-red-700 border border-red-200'
+                            : 'bg-gray-100 text-gray-700 border border-gray-300'
+                        }`}>
+                          {task.deadline}
+                        </div>
+                      </div>
                     </div>
-                    <div className="text-xs text-gray-500 uppercase tracking-wide">Mendesak</div>
                   </div>
-                </div>
-                
-                <div className="flex items-center gap-1 text-purple-600 group-hover:text-purple-700">
-                  <span className="text-sm font-medium">Lihat Detail</span>
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-              
-              {/* Progress indicator */}
-              <div className="mt-4">
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
-                    className={`h-2 rounded-full ${
-                      course.urgentTasks > 0 ? 'bg-gradient-to-r from-red-400 to-red-500' : 'bg-gradient-to-r from-green-400 to-green-500'
-                    }`}
-                    style={{ width: course.urgentTasks > 0 ? '75%' : '100%' }}
-                  ></div>
-                </div>
-                <div className="text-xs text-gray-500 mt-1">
-                  {course.urgentTasks > 0 ? `${course.urgentTasks} tugas perlu perhatian` : 'Semua tugas dalam jadwal'}
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Footer */}
-      <div className="mt-12 text-center">
-        <div className="bg-white rounded-2xl shadow-lg p-6 border border-purple-100">
-          <p className="text-gray-600">
-            💡 <strong>Tips:</strong> Klik pada kartu mata kuliah untuk melihat detail tugas dan kontak dosen
-          </p>
+          ))}
         </div>
       </div>
     </div>
