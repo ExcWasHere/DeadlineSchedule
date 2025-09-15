@@ -16,8 +16,8 @@ const Dashboard: React.FC = () => {
     {
       id: '1',
       matkul: 'Object Oriented Programming',
-      tugas: 'Teory 03 - Encapsulation',
-      deadline: 'Monday',
+      tugas: '-',
+      deadline: '-',
       namaDosen: 'Mr. Ridwan Rismanto',
       nomorWA: '6285646313719',
       icon: <Code className="w-5 h-5 text-red-500" />
@@ -26,7 +26,7 @@ const Dashboard: React.FC = () => {
       id: '2',
       matkul: 'Numerical Methods',
       tugas: 'Gauss and Gauss-Jordan',
-      deadline: 'Wednesday',
+      deadline: '2 Hari lagi',
       namaDosen: 'Mrs. Adevian Fairuz Pratama',
       nomorWA: '6281333156702',
       icon: <Calculator className="w-5 h-5 text-red-500" />
@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
       id: '3',
       matkul: 'Database Advanced',
       tugas: 'Jobsheet 03 - Advanced SQL',
-      deadline: 'Tuesday',
+      deadline: '1 Hari lagi',
       namaDosen: 'Mr. Yoppy Yunhasnawa',
       nomorWA: '6285755023455',
       icon: <Database className="w-5 h-5 text-red-500" />
@@ -44,7 +44,7 @@ const Dashboard: React.FC = () => {
       id: '5',
       matkul: 'Web Programming and Design',
       tugas: 'Jobsheet 03 - Javascript',
-      deadline: 'Wednesday',
+      deadline: '2 Hari lagi',
       namaDosen: 'Mr. Farid Angga Pribadi',
       nomorWA: '6281357046700',
       icon: <Globe className="w-5 h-5 text-red-500" />
@@ -53,7 +53,7 @@ const Dashboard: React.FC = () => {
       id: '6',
       matkul: 'Citizenship',
       tugas: 'Presentation',
-      deadline: 'Friday',
+      deadline: '4 Hari lagi',
       namaDosen: 'Mrs. Widaningsih Condrowardhani',
       nomorWA: '6281803805595',
       icon: <Users className="w-5 h-5 text-red-500" />
@@ -79,8 +79,8 @@ const Dashboard: React.FC = () => {
     {
       id: '9',
       matkul: 'English 2',
-      tugas: 'Unit 2 Assignment',
-      deadline: 'Tomorrow',
+      tugas: 'Unit 3 Assignment',
+      deadline: '7 Hari Lagi',
       namaDosen: 'Mrs. Farida Ulfa',
       nomorWA: '6285334000317',
       icon: <Globe className="w-5 h-5 text-red-500" />
@@ -88,7 +88,7 @@ const Dashboard: React.FC = () => {
   ];
 
   const handleDosenClick = (nomorWA: string, namaDosen: string) => {
-    const message = `Halo ${namaDosen}, saya ingin bertanya mengenai tugas mata kuliah.`;
+    const message = `Selamat ... ${namaDosen}, saya ... dari kelas 2I ingin bertanya ...`;
     const waUrl = `https://wa.me/${nomorWA}?text=${encodeURIComponent(message)}`;
     window.open(waUrl, '_blank');
   };
