@@ -16,8 +16,8 @@ const Dashboard: React.FC = () => {
     {
       id: '1',
       matkul: 'Object Oriented Programming',
-      tugas: '-',
-      deadline: '-',
+      tugas: 'Teory 04 - Class Diagram',
+      deadline: '6 Hari lagi',
       namaDosen: 'Mr. Ridwan Rismanto',
       nomorWA: '6285646313719',
       icon: <Code className="w-5 h-5 text-red-500" />
@@ -26,7 +26,7 @@ const Dashboard: React.FC = () => {
       id: '2',
       matkul: 'Numerical Methods',
       tugas: 'Gauss and Gauss-Jordan',
-      deadline: '2 Hari lagi',
+      deadline: '1 Hari lagi',
       namaDosen: 'Mrs. Adevian Fairuz Pratama',
       nomorWA: '6281333156702',
       icon: <Calculator className="w-5 h-5 text-red-500" />
@@ -35,7 +35,7 @@ const Dashboard: React.FC = () => {
       id: '3',
       matkul: 'Database Advanced',
       tugas: 'Jobsheet 03 - Advanced SQL',
-      deadline: '1 Hari lagi',
+      deadline: '6 Hari lagi',
       namaDosen: 'Mr. Yoppy Yunhasnawa',
       nomorWA: '6285755023455',
       icon: <Database className="w-5 h-5 text-red-500" />
@@ -44,7 +44,7 @@ const Dashboard: React.FC = () => {
       id: '5',
       matkul: 'Web Programming and Design',
       tugas: 'Jobsheet 03 - Javascript',
-      deadline: '2 Hari lagi',
+      deadline: '1 Hari lagi',
       namaDosen: 'Mr. Farid Angga Pribadi',
       nomorWA: '6281357046700',
       icon: <Globe className="w-5 h-5 text-red-500" />
@@ -53,7 +53,7 @@ const Dashboard: React.FC = () => {
       id: '6',
       matkul: 'Citizenship',
       tugas: 'Presentation',
-      deadline: '4 Hari lagi',
+      deadline: '3 Hari lagi',
       namaDosen: 'Mrs. Widaningsih Condrowardhani',
       nomorWA: '6281803805595',
       icon: <Users className="w-5 h-5 text-red-500" />
@@ -62,7 +62,7 @@ const Dashboard: React.FC = () => {
       id: '7',
       matkul: 'Management Information System',
       tugas: 'Presentation',
-      deadline: 'Thursday',
+      deadline: '2 Hari lagi',
       namaDosen: 'Mr. Indra Dharma Wijaya',
       nomorWA: '6281805098868',
       icon: <BookOpen className="w-5 h-5 text-red-500" />
@@ -80,7 +80,7 @@ const Dashboard: React.FC = () => {
       id: '9',
       matkul: 'English 2',
       tugas: 'Unit 3 Assignment',
-      deadline: '7 Hari Lagi',
+      deadline: '6 Hari Lagi',
       namaDosen: 'Mrs. Farida Ulfa',
       nomorWA: '6285334000317',
       icon: <Globe className="w-5 h-5 text-red-500" />
