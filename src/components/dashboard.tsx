@@ -17,7 +17,7 @@ const Dashboard: React.FC = () => {
       id: '1',
       matkul: 'Object Oriented Programming',
       tugas: 'Teory 04 - Class Diagram',
-      deadline: '6 Hari lagi',
+      deadline: '2 Hari lagi',
       namaDosen: 'Mr. Ridwan Rismanto',
       nomorWA: '6285646313719',
       icon: <Code className="w-5 h-5 text-red-500" />
@@ -25,8 +25,8 @@ const Dashboard: React.FC = () => {
     {
       id: '2',
       matkul: 'Numerical Methods',
-      tugas: 'Gauss and Gauss-Jordan',
-      deadline: '1 Hari lagi',
+      tugas: 'Quiz',
+      deadline: '4 Hari lagi',
       namaDosen: 'Mrs. Adevian Fairuz Pratama',
       nomorWA: '6281333156702',
       icon: <Calculator className="w-5 h-5 text-red-500" />
@@ -34,8 +34,8 @@ const Dashboard: React.FC = () => {
     {
       id: '3',
       matkul: 'Database Advanced',
-      tugas: 'Jobsheet 03 - Advanced SQL',
-      deadline: '6 Hari lagi',
+      tugas: 'Jobsheet 05',
+      deadline: '3 Hari lagi',
       namaDosen: 'Mr. Yoppy Yunhasnawa',
       nomorWA: '6285755023455',
       icon: <Database className="w-5 h-5 text-red-500" />
@@ -43,8 +43,8 @@ const Dashboard: React.FC = () => {
     {
       id: '5',
       matkul: 'Web Programming and Design',
-      tugas: 'Jobsheet 03 - Javascript',
-      deadline: '1 Hari lagi',
+      tugas: '-',
+      deadline: '-',
       namaDosen: 'Mr. Farid Angga Pribadi',
       nomorWA: '6281357046700',
       icon: <Globe className="w-5 h-5 text-red-500" />
@@ -52,8 +52,8 @@ const Dashboard: React.FC = () => {
     {
       id: '6',
       matkul: 'Citizenship',
-      tugas: 'Presentation',
-      deadline: '3 Hari lagi',
+      tugas: 'Quiz',
+      deadline: '6 Hari lagi',
       namaDosen: 'Mrs. Widaningsih Condrowardhani',
       nomorWA: '6281803805595',
       icon: <Users className="w-5 h-5 text-red-500" />
@@ -61,8 +61,8 @@ const Dashboard: React.FC = () => {
     {
       id: '7',
       matkul: 'Management Information System',
-      tugas: 'Presentation',
-      deadline: '2 Hari lagi',
+      tugas: 'Erd Design',
+      deadline: '5 Hari lagi',
       namaDosen: 'Mr. Indra Dharma Wijaya',
       nomorWA: '6281805098868',
       icon: <BookOpen className="w-5 h-5 text-red-500" />
@@ -70,8 +70,8 @@ const Dashboard: React.FC = () => {
     {
       id: '8',
       matkul: 'Project Management',
-      tugas: '-',
-      deadline: '-',
+      tugas: 'Interview',
+      deadline: '3 Hari lagi',
       namaDosen: 'Mr. Pramana Yoga Saputra',
       nomorWA: '6281330966644',
       icon: <Calendar className="w-5 h-5 text-red-500" />
@@ -79,8 +79,8 @@ const Dashboard: React.FC = () => {
     {
       id: '9',
       matkul: 'English 2',
-      tugas: 'Unit 3 Assignment',
-      deadline: '6 Hari Lagi',
+      tugas: 'Unit 4 Assignment',
+      deadline: '2 Hari Lagi',
       namaDosen: 'Mrs. Farida Ulfa',
       nomorWA: '6285334000317',
       icon: <Globe className="w-5 h-5 text-red-500" />
